@@ -6,3 +6,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+
+[dependencies.bevy]
+version = "0.13"
+default-features = false
