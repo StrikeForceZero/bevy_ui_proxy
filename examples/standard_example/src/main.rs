@@ -75,14 +75,14 @@ fn setup(
                 });
             children
                 .spawn(ProxyUi::proxy(proxy_target_entity))
-                .insert((NodeBundle {
+                .insert(NodeBundle {
                     style: Style {
                         width: Val::Percent(50.),
                         height: Val::Percent(100.),
                         ..default()
                     },
                     ..default()
-                }, ));
+                });
         });
 }
 
@@ -116,7 +116,6 @@ fn update(
             .insert(GlobalTransform::from(
                 node_state.get_transform().compute_affine(),
             ))
-            .insert(node_state.get_computed_visibility())
-        ;
+            .insert(node_state.get_computed_visibility());
     }
 }

@@ -108,14 +108,14 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
                 });
             children
                 .spawn(ProxyUi::proxy(proxy_target_entity))
-                .insert((NodeBundle {
+                .insert(NodeBundle {
                     style: Style {
                         width: Val::Percent(50.),
                         height: Val::Percent(100.),
                         ..default()
                     },
                     ..default()
-                }, ));
+                });
         });
 }
 
@@ -176,7 +176,6 @@ fn update(
         commands
             .entity(entity)
             .insert(corrected_global_transform)
-            .insert(node_state.get_computed_visibility())
-        ;
+            .insert(node_state.get_computed_visibility());
     }
 }
