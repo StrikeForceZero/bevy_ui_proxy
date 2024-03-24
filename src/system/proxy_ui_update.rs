@@ -5,6 +5,7 @@ use bevy::window::PrimaryWindow;
 use crate::prelude::*;
 use crate::util::ui::ui_to_world;
 
+#[allow(clippy::type_complexity)]
 #[derive(SystemParam)]
 pub(crate) struct ProxyUiUpdateQueries<'w, 's> {
     proxy_ui_query: Query<
