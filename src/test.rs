@@ -1,4 +1,3 @@
-use bevy::prelude::Component;
 
 #[cfg(test)]
 pub(crate) mod lib {

@@ -165,7 +165,7 @@ mod tests {
         assert_eq!(query_proxy_ui_proxied.len(), 1);
         assert_eq!(query_proxy_ui_proxy_target.len(), 1);
 
-        for ((proxied_entity, proxied_node_state), (proxy_target_entity, ui_node_state)) in
+        for ((_proxied_entity, proxied_node_state), (_proxy_target_entity, ui_node_state)) in
             query_proxy_ui_proxied.zip(query_proxy_ui_proxy_target)
         {
             assert_eq!(proxied_node_state, ui_node_state);
