@@ -57,6 +57,7 @@ pub(crate) fn proxy_ui_update(
     ) in queries.proxy_ui_query.iter()
     {
         let ui_rect = node.logical_rect(global_transform);
+        // TODO: this should be deferred until a change is detected
         let world_rect = {
             let window_query_result = match queries.primary_window_query.get_single() {
                 Ok(window) => Some(window),
