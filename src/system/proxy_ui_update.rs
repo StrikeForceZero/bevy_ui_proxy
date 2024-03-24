@@ -19,6 +19,8 @@ pub(crate) struct ProxyUiUpdateQueries<'w, 's> {
             &'static Style,
             &'static Transform,
             &'static GlobalTransform,
+            &'static Visibility,
+            &'static ViewVisibility,
         ),
         (With<ProxyUiTarget>, Without<ProxyUiProxied>),
     >,
@@ -54,6 +56,8 @@ pub(crate) fn proxy_ui_update(
         style,
         transform,
         global_transform,
+        visibility,
+        view_visibility,
     ) in queries.proxy_ui_query.iter()
     {
         let ui_rect = node.logical_rect(global_transform);
@@ -96,6 +100,8 @@ pub(crate) fn proxy_ui_update(
             transform: *transform,
             style: style.clone(),
             ui_scale,
+            visibility: *visibility,
+            view_visibility: *view_visibility,
         };
 
         let proxy_ui_node_state_has_changed = match option_proxy_ui_node_state {

@@ -175,6 +175,8 @@ fn update(
 
         commands
             .entity(entity)
-            .insert(corrected_global_transform);
+            .insert(corrected_global_transform)
+            .insert(node_state.get_computed_visibility())
+        ;
     }
 }

@@ -115,6 +115,8 @@ fn update(
             // if we want to ignore the relative transform to our parent
             .insert(GlobalTransform::from(
                 node_state.get_transform().compute_affine(),
-            ));
+            ))
+            .insert(node_state.get_computed_visibility())
+        ;
     }
 }
