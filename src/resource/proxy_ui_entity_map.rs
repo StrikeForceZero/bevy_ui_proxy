@@ -38,3 +38,22 @@ impl ProxyUiEntityMap {
         self.0.insert(proxied_target_entity, proxy_ui_entity)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_proxy_ui_entity_map() {
+        let mut proxy_ui_entity_map = ProxyUiEntityMap::default();
+        let proxy_target_entity = Entity::from_raw(1);
+        let proxy_ui_entity = Entity::from_raw(2);
+        assert_eq!(proxy_ui_entity_map.insert(proxy_target_entity, proxy_ui_entity), Overwritten::Neither);
+        assert!(proxy_ui_entity_map.is_proxied(&proxy_target_entity));
+        assert!(proxy_ui_entity_map.contains_proxy(&proxy_ui_entity));
+        assert_eq!(proxy_ui_entity_map.get_proxied_target_entity(&proxy_ui_entity), Some(&proxy_target_entity));
+        assert_eq!(proxy_ui_entity_map.get_proxy_entity(&proxy_target_entity), Some(&proxy_ui_entity));
+        assert_eq!(proxy_ui_entity_map.remove_by_proxied_target_entity(&proxy_target_entity), Some((proxy_target_entity, proxy_ui_entity)));
+        assert_eq!(proxy_ui_entity_map.remove_by_proxy_entity(&proxy_ui_entity), None);
+    }
+}
