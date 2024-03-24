@@ -11,3 +11,7 @@ license = "MIT OR Apache-2.0"
 version = "0.13"
 default-features = false
 features = ["bevy_ui"]
+
+[dependencies.bevy_reflect]
+version = "0.13"
+default-features = false
