@@ -1,0 +1,12 @@
+[package]
+name = "bevy_ecs_tilemap_example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.13"
+bevy_ui_proxy = { path = "../.." }
+bevy-inspector-egui = "0.23"
+# bevy 0.13 support crate not published yet - https://github.com/StarArawn/bevy_ecs_tilemap/issues/516
+bevy_ecs_tilemap = { git = "https://github.com/StarArawn/bevy_ecs_tilemap.git" }
+

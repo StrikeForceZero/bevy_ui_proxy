@@ -5,6 +5,12 @@ authors = ["Brett Striker <strikeforcezero@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
 
+[workspace]
+members = [
+    # TODO: these should probably use [[example]]
+    "examples/*"
+]
+
 [dependencies]
 bimap = "0.6"
 
