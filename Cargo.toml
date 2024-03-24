@@ -10,3 +10,4 @@ license = "MIT OR Apache-2.0"
 [dependencies.bevy]
 version = "0.13"
 default-features = false
+features = ["bevy_ui"]
