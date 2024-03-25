@@ -1,2 +1,3 @@
 pub use crate::component::*;
-pub use crate::plugin::BevyProxyUiPlugin;
+pub use crate::plugin::BevyUiProxyPlugin;
+

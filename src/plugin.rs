@@ -5,9 +5,9 @@ use crate::resource::proxy_ui_entity_map::ProxyUiEntityMap;
 use crate::system::proxy_ui_added::proxy_ui_added;
 use crate::system::proxy_ui_update::proxy_ui_update;
 
-pub struct BevyProxyUiPlugin;
+pub struct BevyUiProxyPlugin;
 
-impl Plugin for BevyProxyUiPlugin {
+impl Plugin for BevyUiProxyPlugin {
     fn build(&self, app: &mut App) {
         app.init_resource::<ProxyUiEntityMap>()
             .register_type::<ProxyUiProxied>()

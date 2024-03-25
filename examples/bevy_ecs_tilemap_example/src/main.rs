@@ -8,7 +8,7 @@ fn main() {
     App::new()
         .add_plugins((
             DefaultPlugins,
-            BevyProxyUiPlugin,
+            BevyUiProxyPlugin,
             WorldInspectorPlugin::default(),
         ))
         .add_plugins(TilemapPlugin)
